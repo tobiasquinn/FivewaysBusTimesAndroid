@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	android:orientation="horizontal">
-	<TextView android:text="14:52" android:id="@+id/textViewTime"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		style="@style/BusListFont"></TextView>
-	<TextView android:text="N25" android:id="@+id/textViewNumber"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textColor="#ffff00" style="@style/BusListFont"></TextView>
-	<TextView android:text="Churchill Square" android:id="@+id/textViewDestination"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textColor="#dda0dd" style="@style/BusListFont"></TextView>
+	android:id="@+id/linearLayout1" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical">
+	<LinearLayout android:id="@+id/linearLayout2"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:orientation="vertical" android:layout_weight="1">
+		<ListView android:layout_height="wrap_content" android:id="@android:id/list"
+			android:layout_width="fill_parent" />
+	</LinearLayout>
+	<LinearLayout android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/linearLayout3">
+		<Button android:layout_height="wrap_content" android:text="Test"
+			android:id="@+id/buttonTest" android:layout_width="wrap_content"></Button>
+		<Button android:text="Change Row 2" android:id="@+id/buttonChange"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		<Button android:text="Clear" android:id="@+id/buttonClear"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		<Button android:text="Fetch" android:id="@+id/buttonFetch"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+	</LinearLayout>
 </LinearLayout>

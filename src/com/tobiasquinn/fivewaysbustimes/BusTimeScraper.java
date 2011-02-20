@@ -32,9 +32,6 @@ public class BusTimeScraper {
 				.getInputStream()));
 
 		Object[] data_nodes = node.evaluateXPath(BUS_EXPR);
-		// String data =
-		// ((TagNode)data_nodes[0]).getChildren().iterator().next().toString().trim();
-		// for (Object d_node : data_nodes) {
 		// take the data in groups of three - if the first of the three is
 		// bus number is blank then skip
 		List<Bus> busList = new ArrayList<Bus>();
@@ -44,14 +41,13 @@ public class BusTimeScraper {
 			String bus_time = ((TagNode)data_nodes[i+2]).getText().toString();
 			if (bus_name != "") {
 				bus_dest = bus_dest.replace("&nbsp;", " ");
+				bus_time = bus_time.replace("&nbsp;", " ");
 				Bus b = new Bus(bus_name, bus_dest, bus_time);
 				busList.add(b);
 				Log.v(LOG_TAG, b.toString());
 			}
 		}
 
-		// Log.v(LOG_TAG, ""+data_nodes);
-
-		return null;
+		return busList;
 	}
 }

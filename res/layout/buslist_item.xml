@@ -3,6 +3,9 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="horizontal">
 	<!-- android:layoutAnimation="@anim/list_layout_controller" -->
+	<TextView android:text=" " android:id="@+id/textViewState"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		style="@style/BusListFont" android:textColor="#ff0000"></TextView>
 	<TextView android:text="14:52" android:id="@+id/textViewTime"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		style="@style/BusListFont"></TextView>

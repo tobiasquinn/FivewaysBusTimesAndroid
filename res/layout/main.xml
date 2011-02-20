@@ -8,15 +8,25 @@
 		<ListView android:layout_height="wrap_content" android:id="@android:id/list"
 			android:layout_width="fill_parent" />
 	</LinearLayout>
-	<LinearLayout android:layout_height="wrap_content"
+	<TableLayout android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:id="@+id/linearLayout3">
-		<Button android:layout_height="wrap_content" android:text="Test"
-			android:id="@+id/buttonTest" android:layout_width="wrap_content"></Button>
-		<Button android:text="Change Row 2" android:id="@+id/buttonChange"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-		<Button android:text="Clear" android:id="@+id/buttonClear"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-		<Button android:text="Fetch" android:id="@+id/buttonFetch"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-	</LinearLayout>
+		<TableRow>
+			<Button android:layout_height="wrap_content" android:text="Test"
+				android:id="@+id/buttonTest" android:layout_width="wrap_content"></Button>
+			<Button android:text="Change Row 2" android:id="@+id/buttonChange"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			<Button android:text="Clear" android:id="@+id/buttonClear"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			<Button android:text="Fetch" android:id="@+id/buttonFetch"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		</TableRow>
+		<TableRow>
+			<Button android:text="Set List 1" android:id="@+id/buttonSetList1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			<Button android:text="Set List 2" android:id="@+id/buttonSetList2"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			<Button android:text="CS" android:id="@+id/buttonClearState"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		</TableRow>
+	</TableLayout>
 </LinearLayout>

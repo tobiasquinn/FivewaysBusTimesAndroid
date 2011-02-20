@@ -2,6 +2,7 @@ package com.tobiasquinn.fivewaysbustimes;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -46,8 +47,8 @@ public class FivewaysBusTimes extends ListActivity {
 				Log.v(LOG_TAG, "Test Clicked");
 				// add a bus to the list
 				// m_buslistaa.add(new Bus("26", "Churchill Square", "17:43"));
-				m_buslistaa.add(new Bus("" + counter++, "Churchill Square",
-						"17:43"));
+				// m_buslistaa.add(new Bus("" + counter++, "Churchill Square",
+				// "17:43"));
 			}
 		});
 		final Button changeButton = (Button) findViewById(R.id.buttonChange);
@@ -57,8 +58,8 @@ public class FivewaysBusTimes extends ListActivity {
 			public void onClick(View v) {
 				Log.v(LOG_TAG, "Change Clicked");
 				m_buslistaa.remove(m_buslistaa.getItem(1));
-				m_buslistaa.insert(
-						new Bus("45", "The end of the road", "19:00"), 1);
+				// m_buslistaa.insert(new Bus("45", "The end of the road",
+				// "19:00"), 1);
 			}
 		});
 		final Button clearButton = (Button) findViewById(R.id.buttonClear);
@@ -107,7 +108,7 @@ public class FivewaysBusTimes extends ListActivity {
 				// generate a new list
 				ArrayList<Bus> list1 = new ArrayList<Bus>();
 				for (int i = 0; i < 5; i++) {
-					list1.add(new Bus("" + i, "List1", "12:34"));
+					list1.add(new Bus("" + i, "List1", Calendar.getInstance()));
 				}
 				m_buslistaa.update(list1);
 			}
@@ -118,7 +119,7 @@ public class FivewaysBusTimes extends ListActivity {
 				// generate a new list
 				ArrayList<Bus> list2 = new ArrayList<Bus>();
 				for (int i = 0; i < 10; i++) {
-					list2.add(new Bus("" + i, "List2", "43:21"));
+					list2.add(new Bus("" + i, "List1", Calendar.getInstance()));
 				}
 				m_buslistaa.update(list2);
 			}
@@ -135,13 +136,12 @@ public class FivewaysBusTimes extends ListActivity {
 	private class BusAdapter extends ArrayAdapter<Bus> {
 		private List<Bus> items;
 
-		public BusAdapter(Context context, int textViewResourceId,
-				List<Bus> items) {
+		public BusAdapter(Context context, int textViewResourceId, List<Bus> items) {
 			super(context, textViewResourceId, items);
 			this.items = items;
 		}
 
-		// updates the Bus objects held int the BusAdapter with the given List
+		// updates the Bus objects held in the BusAdapter with the given List
 		public void update(List<Bus> buses) {
 			// take a list of Bus objects
 			// compare each one to the held list of objects
@@ -189,13 +189,12 @@ public class FivewaysBusTimes extends ListActivity {
 				TextView tvs = (TextView) v.findViewById(R.id.textViewState);
 				TextView tvt = (TextView) v.findViewById(R.id.textViewTime);
 				TextView tvn = (TextView) v.findViewById(R.id.textViewNumber);
-				TextView tvd = (TextView) v
-						.findViewById(R.id.textViewDestination);
+				TextView tvd = (TextView) v.findViewById(R.id.textViewDestination);
 				if (tvs != null) {
 					tvs.setText("" + b.getState());
 				}
 				if (tvt != null) {
-					tvt.setText("" + b.getArrivetime());
+					tvt.setText("" + b.getArrivetimeText());
 				}
 				if (tvn != null) {
 					tvn.setText("" + b.getNumber());

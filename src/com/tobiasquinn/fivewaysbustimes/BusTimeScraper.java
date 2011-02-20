@@ -54,8 +54,13 @@ public class BusTimeScraper {
 					int hour = Integer.parseInt(bus_time.substring(0, cpoint));
 					int minutes = Integer.parseInt(bus_time.substring(cpoint+1, cpoint + 3));
 					Log.v(LOG_TAG, hour + " == " + minutes);
+					Calendar timenow = arrivetime;
 					arrivetime.set(Calendar.HOUR_OF_DAY, hour);
 					arrivetime.set(Calendar.MINUTE, minutes);
+					// deal with midnight crossing
+					if (arrivetime.before(timenow)) {
+						arrivetime.add(Calendar.HOUR_OF_DAY, 24);
+					}
 				}
 				Bus b = new Bus(bus_name, bus_dest, arrivetime);
 				busList.add(b);

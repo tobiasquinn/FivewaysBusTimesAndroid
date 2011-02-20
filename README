@@ -3,6 +3,7 @@ Copyright 2011 Tobias Quinn <tobias@tobiasquinn.com>
 
 LICENSE:
     GPLv3
+    htmlcleaner library license in jars/licence.txt
 
 REQUIREMENTS:
     Android SDK

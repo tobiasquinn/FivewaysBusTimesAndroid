@@ -27,6 +27,8 @@
 				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 			<Button android:text="CS" android:id="@+id/buttonClearState"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			<Button android:text="DB Fetch" android:id="@+id/buttonDBFetch"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 		</TableRow>
 	</TableLayout>
 </LinearLayout>

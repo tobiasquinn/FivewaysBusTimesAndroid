@@ -26,6 +26,7 @@ public class FivewaysBusTimes extends ListActivity {
 	public static final String LOG_TAG = "FBT";
 
 	private BusAdapter m_buslistaa;
+	private BusInformation m_bi;
 	// private BusAdapter m_busadapter;
 
 	private int counter = 0;
@@ -79,7 +80,7 @@ public class FivewaysBusTimes extends ListActivity {
 				Log.v(LOG_TAG, "Fetch Clicked");
 				// String test_url =
 				// "http://buses.citytransport.org.uk/smartinfo/service/jsp/?olifServerId=182&autorefresh=0&default_autorefresh=20&routeId=182%2F7&stopId=North+Road&optDir=-1&nRows=10&showArrivals=n&optTime=now&time=";
-				String test_url = "http://buses.citytransport.org.uk/smartinfo/service/jsp/?olifServerId=182&autorefresh=0&default_autorefresh=20&routeId=182%2FN7&stopId=North+Road&optDir=-1&nRows=10&showArrivals=n&optTime=now&time=";
+				String test_url = "http://buses.citytransport.org.uk/smartinfo/service/jsp/?olifServerId=182&autorefresh=0&default_autorefresh=20&routeId=182%2F46&stopId=Hove+Town+Hall+BC&optDir=Hollingbury&nRows=10&allLines=y&showArrivals=n&optTime=now&time=";
 				List<Bus> buslist;
 				try {
 					buslist = BusTimeScraper.getBusesFromURL(test_url);
@@ -129,6 +130,16 @@ public class FivewaysBusTimes extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				m_buslistaa.clearState();
+			}
+		});
+		
+		// access our database
+		m_bi = new BusInformation(this);
+		final Button dbFetchButton = (Button)findViewById(R.id.buttonDBFetch);
+		dbFetchButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				m_bi.getBusNumbers("Fiveways", "Churchill Square");
 			}
 		});
 	}
